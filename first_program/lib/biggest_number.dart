@@ -1,21 +1,22 @@
-// import 'dart:io';
+import 'dart:io';
 
-// class LargestNumber {   
-//    void disp() {    
-//       var list = new List(10);  
-//       print("Enter a number : ");
-//       int t = int.parse(stdin.readLineSync()); 
-//       String str = toString(t);
-//       print(str);
-//       for(int i=0;i<=9;i++){
-//         list[i]=0;
-//       }
-//       print(list);
-//    } 
-// }  
-// void main() {   
-//    LargestNumber c = new LargestNumber();   
-//    c.disp();    
-// }
+class LargestNumber {   
+   void disp() {    
+      var list = new List(); 
+      print("Enter a number : ");
+      var number = stdin.readLineSync();  
+      int len=number.length;
+      for(int i=0;i<len;i++){
+         list.add(number[i]);
+      }
+      list.sort();
+      var reversedList = new List.from(list.reversed);
+      print('Largest Number possible is : ${reversedList.join()}');
+   } 
+}  
+void main() {   
+   var c = new LargestNumber();   
+   c.disp();    
+}
 
 

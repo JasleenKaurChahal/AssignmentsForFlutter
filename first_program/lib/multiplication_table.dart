@@ -5,7 +5,7 @@ class Table {
       print("Enter a number : ");
       int t = int.parse(stdin.readLineSync()); 
       for(int i=1;i<=10;i++){
-        print('$t x $i = ${t*i} \n');
+        print('$t x $i = ${t*i}');
       }
    } 
 }  
