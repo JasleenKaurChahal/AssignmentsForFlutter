@@ -6,7 +6,22 @@ import '../lib/university.dart';
 import '../lib/course.dart';
 import '../lib/branch.dart';
 
-class RegistrationForm {   
+class UniversityManagement {   
+
+// int university_id;
+// UniversityManagement()//calling default construction
+// UniversityManagement(int id)//calling parametrised  constructor
+// {
+//   university_id=id;
+// }
+// //another way to assign is
+// UniversityManagement(this.id)//calling parametrised  constructor
+// {
+  
+// }
+
+
+
    void disp() {     
       // Course course = Course();
       // print('Course Deatils: \n${course.name} ${course.hours} ${course.credits}\n');
@@ -26,7 +41,7 @@ class RegistrationForm {
    } 
 }  
 void main() {   
-   RegistrationForm c = new RegistrationForm();   
+   UniversityManagement c = new UniversityManagement();   
    c.disp();  
      
 }
