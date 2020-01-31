@@ -1,6 +1,8 @@
-class University_Details{
+class University{
   String name="Chitkara";
-  int students_enrolled=400;
-  int no_of_subjects=50;
-  int no_of_teachers=50;
+  String phoneNo='+91 9888884100';
+  String email='chitkara@chitkara.edu.in';
+  int students_enrolled=4000;
+  int no_of_brances=2;
+  int no_of_courses=50;
 }

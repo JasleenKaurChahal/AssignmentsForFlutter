@@ -1,5 +1,3 @@
-// import 'package:university/university.dart' as university;
-
 import 'dart:io';
 import '../lib/student.dart';
 import '../lib/university.dart';
@@ -33,11 +31,16 @@ class UniversityManagement {
       // print('Students Deatils: \n${student.name} ${student.id} ${student.marks} \n');
       // student.about_student();
       // student.about_student_info('Jasleen');
-      Branch_Name branch = Branch_Name();
-      print("Enter a time zone in format HH.MM : ");
-      double t = double.parse(stdin.readLineSync()); 
+      // Branch_Name branch = Branch_Name();
+      // print("Enter a time zone in format HH.MM : ");
+      // double t = double.parse(stdin.readLineSync()); 
       //show_branchInfo();
      //print('Branch Deatils: \n${branch.branchDetails} ${branch.branchName} ${branch.branchId} ${branch.timeZone}\n');
+
+   
+     stdout.write('Enter the no of Persons : ');
+      var studentNo = stdin.readLineSync();
+      print(studentNo);
    } 
 }  
 void main() {   
