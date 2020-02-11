@@ -10,11 +10,13 @@ class Login extends StatefulWidget{
 
 class LoginPage extends State<Login> {
   TextStyle style = TextStyle(fontFamily: 'Roberto', fontSize: 20.0);
-
+  TextEditingController email=TextEditingController();
+  TextEditingController pass=TextEditingController();
       @override
       Widget build(BuildContext context) {
 
         final emailField = TextField(
+          controller: email,
           obscureText: false,
           style: style,
           decoration: InputDecoration(
@@ -24,6 +26,7 @@ class LoginPage extends State<Login> {
                   OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
         );
         final passwordField = TextField(
+          controller: pass,
           obscureText: true,
           style: style,
           decoration: InputDecoration(
@@ -40,10 +43,12 @@ class LoginPage extends State<Login> {
             minWidth: MediaQuery.of(context).size.width,
             padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
             onPressed:(){
+              if(pass.text.length != 0 && email.text.length!=0 && email.text.contains('@')){
                 Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => PlacesList()),
-              );   
+              ); 
+              }      
             },   
             child: Text("Login",
                 textAlign: TextAlign.center,

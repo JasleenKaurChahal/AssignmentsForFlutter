@@ -1,10 +1,8 @@
-import 'package:dashboard/screens/placesList.dart';
 import 'package:flutter/material.dart';
- //import './screens/home.dart';
-import './screens/dashboard/row_col.dart';
 import './screens/signup.dart';
-import './screens/placesList.dart';
 import './screens/login.dart';
+import './screens/SignupScreen/sign.dart';
+import './screens/quiz/quiz_page.dart';
 
 // void main() => runApp(new MyApp());//function expression
 void main(){
@@ -12,11 +10,10 @@ void main(){
     debugShowCheckedModeBanner: false,
     title:"Ui designs",
     color: Colors.blueAccent,
-    //home:Assignment()
-    //home:PlacesList()
-    home:Login()
-    )
-  );
+    //home:Login()
+    //home:Sign()
+    home:Quiz()
+  ));
 }
 
 class MyApp extends StatelessWidget {

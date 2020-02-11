@@ -12,12 +12,26 @@ class Portion extends State<Portion1> {
   var c=Colors.deepOrange;
   var d=Colors.green;
 
+  Color generateLuckyColor(){
+    var col=[Colors.red,Colors.indigoAccent,Colors.lime,Colors.pinkAccent];
+    var r=Random();
+    int i=r.nextInt(3);
+    return col[i];
+  }
+
   _onSelectItem() {
   setState(() {
-    c = generateLuckyColor();
     d = generateLuckyColor();
     });
   }
+
+  _on2SelectItem() {
+  setState(() {
+      c = generateLuckyColor();
+    });
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -55,17 +69,15 @@ class Portion extends State<Portion1> {
                       semanticLabel: 'Text to announce in accessibility modes',
                     ),
                   ),
-                  onTap: ()=>_onSelectItem()
+                  onTap: (){
+                    setState(() {
+                    c = generateLuckyColor();
+                  });
+                  }
                   )
                 )
             ],
           )
         );
-  }
-  Color generateLuckyColor(){
-    var col=[Colors.red,Colors.indigoAccent,Colors.lime,Colors.pinkAccent];
-    var r=Random();
-    int i=r.nextInt(4);
-    return col[i];
   }
 }
