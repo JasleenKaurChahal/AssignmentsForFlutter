@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './signUpIcons.dart';
+import '../placesList.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 
 class TextEntriesForm extends StatefulWidget {
   @override
@@ -15,6 +17,22 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
       String _mobile;
       String _pass;
       String _confirmPass;
+      bool loading=false;
+  
+      void _onLoading() {
+        setState(() {
+          loading = true;
+          new Future.delayed(new Duration(seconds: 3), _login);
+        });
+      }
+
+
+      Future _login() async{
+        setState((){
+          loading = false;
+        });
+        signInFunc();
+      }
 
   @override
   void initState() {
@@ -61,7 +79,7 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
               Center(child:Text('Sign Up',style:TextStyle(color:Colors.white,fontSize: 40.0))),
               SizedBox(height:40.0),
               TextFormField(
-                    focusNode: nameNode,
+                    //focusNode: nameNode,
                     keyboardType: TextInputType.text,
                     controller: name,
                     cursorColor: Colors.black,
@@ -248,10 +266,11 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
                         side: BorderSide(color: Colors.green)
                     ),
                     color:Colors.green.withOpacity(0.6),
-                    child:Text('Sign Up',style:TextStyle(color:Colors.white,fontSize: 20)),
+                    child:loading?CircularProgressIndicator():Text('Sign Up',style:TextStyle(color:Colors.white,fontSize: 20)),
                     elevation:7.0,
                     onPressed:(){
-                      signInFunc();
+                      _onLoading();
+                      // signInFunc();
                     },
                     hoverElevation: 0.1,
                   )),
@@ -313,20 +332,13 @@ class _TextEntriesFormState extends State<TextEntriesForm> {
         }
         
         void signInFunc(){
-            // var alertBox=AlertDialog(
-            //   title:Text('Signed Up successfully'),
-            //   content:Text('Enjoy your app Experience! 😃')
-            // );
-            // showDialog(
-            //   context: context,
-            //   // builder:(BuildContext context){
-            //   //   return alertBox;
-            //   // }
-            //   builder: (BuildContext context)=>alertBox
-            // );
+          _formKey.currentState.save();
+          print('here $loading');
+            
             if (_formKey.currentState.validate()) {
-      //    If all data are correct then save data to out variables
-              _formKey.currentState.save();
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PlacesList()));
         } else {
       //    If all data are not valid then start auto validation.
           setState(() {

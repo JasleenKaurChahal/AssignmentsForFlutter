@@ -3,6 +3,7 @@ import './screens/signup.dart';
 import './screens/login.dart';
 import './screens/SignupScreen/sign.dart';
 import './screens/quiz/quiz_page.dart';
+import './screens/timeline.dart/posts.dart';
 
 // void main() => runApp(new MyApp());//function expression
 void main(){
@@ -11,8 +12,9 @@ void main(){
     title:"Ui designs",
     color: Colors.blueAccent,
     //home:Login()
-    //home:Sign()
-    home:Quiz()
+    home:Sign()
+   // home:Quiz()
+    //home:TimelinePosts()
   ));
 }
 
